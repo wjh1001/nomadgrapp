@@ -8,11 +8,48 @@ class App extends React.Component {
     isLoadingComplete: false
   };
   render(){
+    const { isLoadingComplete} = this.state;
+    if(!isLoadingComplete){
+    return (<AppLoading
+              startAsync={this._loadingAssetsAsync}
+              onError={this._handleLoadingError}
+              onFinish={this._handleFinishLoading}
+      
+      />
+    );
+    }
+
     return(
       <View style={styles.container}>
         <Text> Open up App.js to start working on your</Text>
       </View>
     )
+  }
+  _loadingAssetsAsync = async() => {
+    return Promise.all([
+      Asset.loadAsync([
+        require("./assets/images/logo.png"),
+        require("./assets/images/logo-white.png"),
+        require("./assets/images/noPhoto.jpg"),
+        require("./assets/images/photoPlaceholder.png")
+
+      ]),
+      Font.loadAsync({
+        ...Ionicons.font,
+        ...MaterialIcons.font
+      });
+
+    ]);
+  };
+
+  _handleLoadingError = error => {
+    console.error(error);
+  };
+
+  _handleFinishLoading = async() => {
+    this.setState({
+      isLoadingComplete: true
+    })
   }
 }
 
