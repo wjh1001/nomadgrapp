@@ -11,7 +11,7 @@ class App extends React.Component {
     const { isLoadingComplete} = this.state;
     if(!isLoadingComplete){
     return (<AppLoading
-              startAsync={this._loadingAssetsAsync}
+              startAsync={this._loadAssetsAsync}
               onError={this._handleLoadingError}
               onFinish={this._handleFinishLoading}
       
@@ -25,7 +25,7 @@ class App extends React.Component {
       </View>
     )
   }
-  _loadingAssetsAsync = async() => {
+  _loadAssetsAsync = async() => {
     return Promise.all([
       Asset.loadAsync([
         require("./assets/images/logo.png"),
