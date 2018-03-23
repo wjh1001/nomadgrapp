@@ -6,13 +6,13 @@ import { StyleSheet, Text, View } from 'react-native';
 class App extends React.Component {
   state = {
     isLoadingComplete: false
-  }
+  };
   render(){
-    return{
+    return(
       <View style={styles.container}>
-        <Text> Open up App.js to start working on your appp!</Text>
+        <Text> Open up App.js to start working on your</Text>
       </View>
-    }
+    )
   }
 }
 
