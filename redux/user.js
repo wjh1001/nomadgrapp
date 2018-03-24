@@ -6,23 +6,25 @@
 
 // API Actions
 
-// Initial state
+// Initial State
 
 const initialState = {
     isLoggedIn: false
-}
-
-// Reducer
-
-function reducer(state = initialState, action){
-    switch (action.type){
-        default:
-            return state;
+  };
+  
+  // Reducer
+  
+  function reducer(state = initialState, action) {
+    switch (action.type) {
+      default:
+        return state;
     }
-}
-
-// Export
-
-// Default Reducer Export
-
-export default reducer
+  }
+  
+  // Reducer Functions
+  
+  // Exports
+  
+  // Default Reducer Export
+  
+  export default reducer;
