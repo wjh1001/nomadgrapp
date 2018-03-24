@@ -15,7 +15,7 @@ class AppContainer extends Component {
         {isLoggedIn ? (
           <Text>You are logged in</Text>
         ) : (
-          <Text>I dont know you</Text>
+          <LoggedOutNavigation />
         )}
       </View>
     );
