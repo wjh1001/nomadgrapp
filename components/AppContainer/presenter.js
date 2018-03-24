@@ -1,21 +1,33 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { View, Text, StatusBar } from "react-native";
+import { View, Text, StatusBar, StyleSheet } from "react-native";
 
-const AppContainer extends Component {
-    static propTypes = {
-        isLoggedIn: PropTypes.booli.isRequired
-    };
-    render () {
-        const { isLoggedIn } = this.props;
-        <View>
-            { isLoggedIn ? (
-            <Text>Hahaha Login </Text>
-            ) : (
-            <Text>No I'm not log in</Text>
-            )}
-        </View>
-    }    
+class AppContainer extends Component {
+  static propTypes = {
+    isLoggedIn: PropTypes.bool.isRequired
+  };
+  render() {
+    const { isLoggedIn } = this.props;
+    return (
+      <View style={styles.container}>
+        <StatusBar hidden={true} />
+        {isLoggedIn ? (
+          <Text>You are logged in</Text>
+        ) : (
+          <Text>I dont know you</Text>
+        )}
+      </View>
+    );
+  }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center"
+  }
+});
 
 export default AppContainer;
