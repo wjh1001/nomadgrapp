@@ -36,6 +36,8 @@ const LogInScreen = props =>
         secureTextEntry
         value={props.password}
         onChangeText={props.changePassword}
+        returnKeyType={'send'}
+        onSubmitEditing={props.submit}
 			/>
       <TouchableOpacity style={styles.touchable} onPressOut={props.submit}>
         <View style={styles.button}>
