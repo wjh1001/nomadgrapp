@@ -2,6 +2,10 @@ import React from "react";
 import { AppLoading, Asset, Font } from "expo";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { StyleSheet, Text, View } from "react-native";
+import { Provider } from "react-redux";
+import { PersistGate } form "redux-persist/es/integration/react";
+import configureStore from "./redux/configureStore";
+const { persistor, store } = configureStore();
 
 class App extends React.Component {
   state = {
