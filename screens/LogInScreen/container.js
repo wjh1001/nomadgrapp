@@ -28,7 +28,7 @@ class Container extends Component {
 		this.setState({ password: text });
 	};
 
-	_submit = () => {
+	_submit = async() => {
 		const { username, password, isSubmitting } = this.state;
 		const { login } = this.props;
 
@@ -39,7 +39,13 @@ class Container extends Component {
 					isSubmitting: true
 				});
 				// redux action
-				login(username, password);
+				const loginResult = await login(username, password);
+				if(!login){
+					Alert.alert("Something went wrong, try again");
+					this.setState({
+						isSubmitting:false
+					})
+				}
 			} else {
 				Alert.alert('All field are required');
 			}
