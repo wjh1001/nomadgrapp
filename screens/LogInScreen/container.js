@@ -40,7 +40,7 @@ class Container extends Component {
 				});
 				// redux action
 				const loginResult = await login(username, password);
-				if(!login){
+				if(!loginResult){
 					Alert.alert("Something went wrong, try again");
 					this.setState({
 						isSubmitting:false

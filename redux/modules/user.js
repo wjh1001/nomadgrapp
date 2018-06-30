@@ -26,19 +26,17 @@ function setLogIn(token) {
 
 
 
-function setLogOut() {
-  return {
-    type: LOG_OUT,
-  }
-}
-
-
 function setUser(user) {
   return {
     type: SET_USER,
     user
   }
 
+}
+
+
+function logOut() {
+  return { type: LOG_OUT };
 }
 
 // API Actions
@@ -82,7 +80,7 @@ function reducer(state = initialState, action) {
     case LOG_IN:
       return applyLogIn(state, action);
     case LOG_OUT:
-      return applyLogOut();
+      return applyLogOut(state, action);
     case SET_USER:
       return applySetUser(state, action);
 
@@ -113,7 +111,7 @@ function applyLogOut(state, action) {
     ...state,
     isLoggedIn: false,
     token: ""
-  }
+  };
 }
 
 
