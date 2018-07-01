@@ -8,7 +8,10 @@ import sharedRoutes, {
 
 const ProfileRoute = StackNavigator({
     Profile: {
-        screen: ProfileScreen
+        screen: ProfileScreen,
+        navigationOptions: ({ screenProps }) => ({
+            headerTitle: screenProps.username
+        })
     },
     ...sharedRoutes
 }, {

@@ -5,7 +5,7 @@ const mapStateToProps = (state, ownProps) => {
     const { user } = state;
     return {
         isLoggedIn: user.isLoggedIn,
-        profile: null
+        profile: user.profile
 
     }
 }
