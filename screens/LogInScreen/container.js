@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Alert } from 'react-native';
 import LogInScreen from './presenter';
+import PropTypes from "prop-types";
 
 class Container extends Component {
 	state = {
