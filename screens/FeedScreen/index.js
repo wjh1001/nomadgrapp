@@ -4,6 +4,6 @@ import {
     Text
 } from "react-native";
 
-const SearchScreen = props => < Text > Feed < /Text>;
+const SearchScreen = props => <Text onPress={() => props.navigation.navigate("Likes")}> Feed < /Text>;
 
 export default SearchScreen;

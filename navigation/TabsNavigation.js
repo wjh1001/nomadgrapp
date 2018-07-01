@@ -71,7 +71,9 @@ const TabsNavigation = TabNavigator({
             backgroundColor: "#FBFBFB",
             height: 45
         }
-    }
+    },
+    swipeEnabled: true, //swipe TabNavigator
+    animationEnabled: true
 });
 
 export default TabsNavigation;
