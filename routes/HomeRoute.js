@@ -8,10 +8,10 @@ import sharedRoutes, {
 
 const HomeRoute = StackNavigator({
     Home: {
-        screen: FeedScreen,
-        navigationOptions: {
-            title: "Nomadgram"
-        }
+        screen: FeedScreen
+        // navigationOptions: {
+        //     title: "Nomadgram"
+        // }
 
     },
     ...sharedRoutes
