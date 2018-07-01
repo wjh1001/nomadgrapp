@@ -31,7 +31,7 @@ function getFeed(){
          const { user: { token } } = getState();
          fetch(`${API_URL}/images/`, {
              headers: {
-                 Authorizations: `JWT ${token}`
+                 Authorization: `JWT ${token}`
              }
          })
          .then(response => {
@@ -51,7 +51,7 @@ function getSearch(){
         const { user: { token } } = getState();
         fetch(`${API_URL}/images/search/`, {
             headers: {
-                Authorizations: `JWT ${token}`
+                Authorization: `JWT ${token}`
             }
         })
         .then(response => {
@@ -75,17 +75,16 @@ const initialState = {}
 
 // reducer
 
-const reducer(state = initialState, action ){
-    switch (action.type){
-        case SET_FEED:
-            return applySetFeed(state, action);
-        case SET_SEARCH:
-            return applySetSearch(state, action);
-
-        default:
+function reducer(state = initialState, action) {
+    switch (action.type) {
+      case SET_FEED:
+        return applySetFeed(state, action);
+      case SET_SEARCH:
+        return applySetSearch(state, action);
+      default:
         return state;
     }
-}
+  }
 
 // reducer functions
 
