@@ -7,6 +7,7 @@ import {
   RefreshControl,
   StyleSheet
 } from "react-native";
+import Photo from "../../components/Photo"
 
 // const FeedScreen = props => <Text onPress={() => props.navigation.navigate("Likes")}> Feed < /Text>;
 
@@ -20,7 +21,12 @@ const FeedScreen = props => (
       />
     }
     contentContainerStyle={styles.container}
-  />
+  >
+    <View style={styles.container}>
+      {props.feed &&
+        props.feed.map(photo => <Photo {...photo} key={photo.id} />)}
+    </View>
+  </ScrollView>
 );
 
 const styles = StyleSheet.create({
@@ -32,7 +38,8 @@ const styles = StyleSheet.create({
 
 FeedScreen.propTypes = {
   isFetching: PropTypes.bool.isRequired,
-  refresh: PropTypes.func.isRequired
+  refresh: PropTypes.func.isRequired,
+  feed: PropTypes.array.isRequired
 };
 
 export default FeedScreen;
